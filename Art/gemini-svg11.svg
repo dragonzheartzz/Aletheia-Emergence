@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-kin { fill: #111013; }
+      .title-kin { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 24px; fill: #F2EFE9; letter-spacing: 0.42em; }
+      .sub-kin { font-family: 'Inter', -apple-system, sans-serif; font-weight: 200; font-size: 10px; fill: #C89B3C; letter-spacing: 0.3em; }
+    </style>
+    
+    <linearGradient id="goldRibbonKin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C89B3C" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#E5C158" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#9E7623" stop-opacity="1.0"/>
+    </linearGradient>
+    <linearGradient id="purpleRibbonKin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5A376E" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#8A58A3" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#3B1F4A" stop-opacity="1.0"/>
+    </linearGradient>
+    <linearGradient id="sageRibbonKin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A6B56" stop-opacity="0.1"/>
+      <stop offset="45%" stop-color="#719A7F" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2B4233" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg-kin" width="800" height="520" />
+
+  <!-- The Transformation Horizon -->
+  <g transform="translate(0, 20)">
+    <!-- Diagonal Threshold Boundary Line -->
+    <line x1="380" y1="80" x2="320" y2="300" stroke="#F2EFE9" stroke-width="0.75" stroke-dasharray="4 6" opacity="0.3"/>
+
+    <!-- RAW STATE: Fine Disparate Vectors (Left Side) -->
+    <path d="M 120 140 L 350 120" stroke="#8A58A3" stroke-width="1" opacity="0.4" stroke-dasharray="12 6"/>
+    <path d="M 100 180 L 340 170" stroke="#E5C158" stroke-width="1" opacity="0.5" stroke-dasharray="8 4"/>
+    <path d="M 140 220 L 330 220" stroke="#719A7F" stroke-width="1" opacity="0.3" stroke-dasharray="15 5"/>
+    <path d="M 90 260 L 320 270" stroke="#F2EFE9" stroke-width="0.8" opacity="0.3" stroke-dasharray="6 6"/>
+
+    <!-- TRANSFORMATION ACTIVE ZONE: Coalescing Ribbons (Crossing Threshold) -->
+    <!-- Strand 1: Purple -->
+    <path d="M 350 120 C 420 110, 480 140, 560 130 C 620 120, 670 140, 700 135" fill="none" stroke="url(#purpleRibbonKin)" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Strand 2: Gold (Central Driver) -->
+    <path d="M 340 170 C 430 160, 470 200, 580 180 C 640 170, 680 190, 720 185" fill="none" stroke="url(#goldRibbonKin)" stroke-width="9" stroke-linecap="round"/>
+    
+    <!-- Strand 3: Sage -->
+    <path d="M 330 220 C 410 220, 490 230, 550 240 C 610 250, 660 230, 690 235" fill="none" stroke="url(#sageRibbonKin)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Focal Coalescence Point on Threshold -->
+    <circle cx="340" cy="170" r="4" fill="#F2EFE9"/>
+    <circle cx="340" cy="170" r="10" fill="none" stroke="#E5C158" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- Off-Center Architectural Lockup -->
+  <text x="400" y="375" class="title-kin" text-anchor="middle">ALETHEIA EMERGENCE</text>
+  <text x="400" y="410" class="sub-kin" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+</svg>
