@@ -1,33 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
   <defs>
     <style>
-      .bg { fill: #121316; }
-      .brand-title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 300; font-size: 28px; fill: #F5F4EF; letter-spacing: 0.3em; }
-      .brand-subtitle { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 200; font-size: 11px; fill: #2C4A6F; letter-spacing: 0.25em; }
-      .mark-arc { fill: none; stroke: #2C4A6F; stroke-width: 3.5; stroke-linecap: round; }
-      .mark-core { fill: #F5F4EF; }
-      .mark-accent { fill: none; stroke: #F5F4EF; stroke-width: 1.5; stroke-linecap: round; opacity: 0.8; }
+      .bg-c { fill: #FFFFFF; }
+      .text-c { font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 24px; fill: #111111; letter-spacing: -0.02em; }
+      .text-c-sub { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: 24px; fill: #888888; letter-spacing: -0.02em; }
     </style>
   </defs>
-
-  <!-- Background -->
-  <rect class="bg" width="800" height="500" />
-
-  <!-- Central Convergence Emblem -->
-  <g transform="translate(400, 190)">
-    <!-- Primary Converging Arcs -->
-    <path class="mark-arc" d="M -90,-50 C -40,-50 -20,-10 0,0 C 20,10 40,50 90,50" />
-    <path class="mark-arc" d="M -90,50 C -40,50 -20,10 0,0 C 20,-10 40,-50 90,-50" />
-    
-    <!-- Inner Precision Lines -->
-    <path class="mark-accent" d="M -40,-22 C -15,-22 0,0 0,0 C 0,0 15,22 40,22" />
-    <path class="mark-accent" d="M -40,22 C -15,22 0,0 0,0 C 0,0 15,-22 40,-22" />
-    
-    <!-- Focal Point Core -->
-    <circle class="mark-core" cx="0" cy="0" r="4.5" />
-  </g>
-
-  <!-- Brand Typography -->
-  <text x="400" y="340" class="brand-title" text-anchor="middle">ALETHEIA EMERGENCE</text>
-  <text x="400" y="375" class="brand-subtitle" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+  <rect class="bg-c" width="800" height="500" />
+  
+  <!-- The Process: Condensation and Coalescence -->
+  <rect x="200" y="210" width="1" height="80" fill="#111111" opacity="0.2"/>
+  <rect x="220" y="210" width="3" height="80" fill="#111111" opacity="0.4"/>
+  <rect x="250" y="210" width="8" height="80" fill="#111111" opacity="0.6"/>
+  <rect x="290" y="210" width="20" height="80" fill="#111111" opacity="0.85"/>
+  <rect x="340" y="210" width="50" height="80" fill="#111111" opacity="1.0"/>
+  
+  <!-- Typography aligned to the final coalesced block -->
+  <text x="420" y="260" class="text-c">ALETHEIA <tspan class="text-c-sub">EMERGENCE</tspan></text>
 </svg>
