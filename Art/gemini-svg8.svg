@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-crest { fill: #131017; }
+      .brand-title-crest { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 24px; fill: #F4EFE6; letter-spacing: 0.4em; }
+      .brand-sub-crest { font-family: 'Inter', -apple-system, sans-serif; font-weight: 200; font-size: 10px; fill: #C5A059; letter-spacing: 0.3em; }
+      .ribbon { fill: none; stroke-linecap: round; }
+    </style>
+    <linearGradient id="goldRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6C280"/>
+      <stop offset="100%" stop-color="#99732B"/>
+    </linearGradient>
+    <linearGradient id="purpleRibbon" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A882B5"/>
+      <stop offset="100%" stop-color="#4A2E5D"/>
+    </linearGradient>
+    <linearGradient id="sageRibbon" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7A9A8B"/>
+      <stop offset="100%" stop-color="#2C4436"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg-crest" width="800" height="520" />
+
+  <!-- Mark: Interwoven Organic Loops -->
+  <g transform="translate(400, 190)">
+    <!-- Deep Layer / Purple Shadow Strand -->
+    <path class="ribbon" d="M -70,20 C -90,-40 -20,-80 20,-50 C 60,-20 80,40 30,60 C -20,80 -80,20 -30,-40" stroke="url(#purpleRibbon)" stroke-width="8" opacity="0.75"/>
+    
+    <!-- Mid Layer / Sage Strand -->
+    <path class="ribbon" d="M 70,-20 C 90,40 20,80 -20,50 C -60,20 -80,-40 -30,-60 C 20,-80 80,-20 30,40" stroke="url(#sageRibbon)" stroke-width="6" opacity="0.85"/>
+    
+    <!-- Top Layer / Gold Strand Interlock -->
+    <path class="ribbon" d="M -40,-50 C 20,-90 80,-30 50,20 C 20,70 -50,60 -60,0 C -70,-60 0,-70 40,-30" stroke="url(#goldRibbon)" stroke-width="5"/>
+    
+    <!-- Focal Emergent Spark -->
+    <circle cx="0" cy="-5" r="3.5" fill="#F4EFE6"/>
+  </g>
+
+  <!-- Brand Lockup -->
+  <text x="400" y="355" class="brand-title-crest" text-anchor="middle">ALETHEIA EMERGENCE</text>
+  <text x="400" y="390" class="brand-sub-crest" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+</svg>
