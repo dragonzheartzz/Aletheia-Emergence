@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-field { fill: #0F1012; }
+      .brand-title-field { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 22px; fill: #F0F1ED; letter-spacing: 0.45em; }
+      .brand-subtitle-field { font-family: 'Inter', -apple-system, sans-serif; font-weight: 200; font-size: 10px; fill: #5A6B5C; letter-spacing: 0.3em; }
+    </style>
+    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5A6B5C" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#F0F1ED" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg-field" width="800" height="500" />
+
+  <!-- Emblem: Converging Line Field -->
+  <g transform="translate(400, 175)">
+    <!-- Outer Fine Lines -->
+    <path d="M -85,-55 Q -25,-25 0,-12" fill="none" stroke="#5A6B5C" stroke-width="1.2" opacity="0.4"/>
+    <path d="M 85,-55 Q 25,-25 0,-12" fill="none" stroke="#5A6B5C" stroke-width="1.2" opacity="0.4"/>
+    <path d="M -85,55 Q -25,25 0,12" fill="none" stroke="#5A6B5C" stroke-width="1.2" opacity="0.4"/>
+    <path d="M 85,55 Q 25,25 0,12" fill="none" stroke="#5A6B5C" stroke-width="1.2" opacity="0.4"/>
+
+    <!-- Mid Weight Transition Lines -->
+    <path d="M -60,-55 Q -18,-20 0,-9" fill="none" stroke="#5A6B5C" stroke-width="1.8" opacity="0.65"/>
+    <path d="M 60,-55 Q 18,-20 0,-9" fill="none" stroke="#5A6B5C" stroke-width="1.8" opacity="0.65"/>
+    <path d="M -60,55 Q -18,20 0,9" fill="none" stroke="#5A6B5C" stroke-width="1.8" opacity="0.65"/>
+    <path d="M 60,55 Q 18,20 0,9" fill="none" stroke="#5A6B5C" stroke-width="1.8" opacity="0.65"/>
+
+    <!-- Core Converging Vectors -->
+    <path d="M -35,-55 Q -8,-15 0,-6" fill="none" stroke="url(#sageGrad)" stroke-width="2.6"/>
+    <path d="M 35,-55 Q 8,-15 0,-6" fill="none" stroke="url(#sageGrad)" stroke-width="2.6"/>
+    <path d="M -35,55 Q -8,15 0,6" fill="none" stroke="url(#sageGrad)" stroke-width="2.6"/>
+    <path d="M 35,55 Q 8,15 0,6" fill="none" stroke="url(#sageGrad)" stroke-width="2.6"/>
+
+    <!-- Coalesced Focal Center -->
+    <circle cx="0" cy="0" r="6" fill="#F0F1ED"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#5A6B5C" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Stacked Brand Typography -->
+  <text x="400" y="315" class="brand-title-field" text-anchor="middle">A L E T H E I A</text>
+  <text x="400" y="348" class="brand-title-field" text-anchor="middle">E M E R G E N C E</text>
+  <text x="400" y="390" class="brand-subtitle-field" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+</svg>
