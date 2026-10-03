@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-b { fill: #EBEAE5; }
+      .text-b { font-family: 'Georgia', serif; font-weight: 400; font-size: 16px; fill: #2C2B29; letter-spacing: 0.2em; }
+      .form-heavy { fill: #2C2B29; }
+      .form-accent { fill: #C86548; }
+    </style>
+  </defs>
+  <rect class="bg-b" width="800" height="500" />
+  
+  <!-- Organic Form -->
+  <path class="form-heavy" d="M 220 100 C 350 100, 420 200, 420 250 C 420 300, 350 400, 220 400 Z" />
+  
+  <!-- Geometric Form -->
+  <rect class="form-heavy" x="432" y="100" width="90" height="300" />
+  
+  <!-- The Emergence: Suspended in the negative space tension -->
+  <circle class="form-accent" cx="426" cy="250" r="3.5" />
+  
+  <!-- Marginal Typography -->
+  <text x="580" y="240" class="text-b">ALETHEIA</text>
+  <text x="580" y="270" class="text-b">EMERGENCE</text>
+</svg>
