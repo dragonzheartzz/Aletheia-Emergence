@@ -1,0 +1,48 @@
+<svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-orb { fill: #F5F2EA; }
+      .brand-title-orb { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 24px; fill: #1C1917; letter-spacing: 0.4em; }
+      .brand-sub-orb { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 10px; fill: #4A5E50; letter-spacing: 0.28em; }
+      .strand { fill: none; stroke-linecap: round; }
+    </style>
+
+    <linearGradient id="goldStrand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8C6A15"/>
+    </linearGradient>
+
+    <linearGradient id="purpleStrand" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3A70"/>
+      <stop offset="100%" stop-color="#2A1636"/>
+    </linearGradient>
+
+    <linearGradient id="sageStrand" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A6B56"/>
+      <stop offset="100%" stop-color="#23382B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Warm Premium Paper Background -->
+  <rect class="bg-orb" width="800" height="520" />
+
+  <!-- The Coalescing Kinetic Spherical Ribbon -->
+  <g transform="translate(400, 190)">
+    <!-- Back Outer Loop (Purple) -->
+    <path class="strand" d="M -75,-10 C -95,-60 -30,-105 35,-85 C 95,-65 105,10 70,60" stroke="url(#purpleStrand)" stroke-width="7" opacity="0.65" />
+
+    <!-- Mid Layer Sweeping Loop (Sage) -->
+    <path class="strand" d="M -60,60 C -100,10 -70,-60 -10,-90 C 50,-110 90,-40 60,30 C 40,80 -30,95 -70,50" stroke="url(#sageStrand)" stroke-width="9" opacity="0.85" />
+
+    <!-- Foreground Interlocking Primary Loop (Gold) -->
+    <path class="strand" d="M -80,-30 C -60,40 10,95 70,70 C 110,40 80,-40 20,-75 C -40,-95 -90,-20 -40,40 C 0,80 60,60 85,10" stroke="url(#goldStrand)" stroke-width="11" />
+
+    <!-- Emergent Core Point of Synthesis -->
+    <circle cx="5" cy="-5" r="5" fill="#1C1917" />
+    <circle cx="5" cy="-5" r="2" fill="#F5F2EA" />
+  </g>
+
+  <!-- Clean Editorial Typography -->
+  <text x="400" y="355" class="brand-title-orb" text-anchor="middle">ALETHEIA EMERGENCE</text>
+  <text x="400" y="390" class="brand-sub-orb" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+</svg>
