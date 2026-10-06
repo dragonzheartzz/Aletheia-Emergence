@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-18 { fill: #141218; }
+      .title-18 { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 25px; fill: #F4EFE6; letter-spacing: 0.42em; }
+      .sub-18 { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 10px; fill: #C89B3C; letter-spacing: 0.3em; }
+      .ribbon-stroke { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+
+    <linearGradient id="purpleKnot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9B51E0"/>
+      <stop offset="50%" stop-color="#6B21A8"/>
+      <stop offset="100%" stop-color="#3B0764"/>
+    </linearGradient>
+
+    <linearGradient id="goldKnot" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FACC15"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <linearGradient id="sageKnot" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Slate-Obsidian Canvas -->
+  <rect class="bg-18" width="800" height="560" />
+
+  <!-- Continuous 3D Weave Mark -->
+  <g transform="translate(400, 200)">
+    <!-- Under-Layer: Sage Foundation Loop -->
+    <path class="ribbon-stroke" d="M -85,-20 C -110,40 -40,105 30,85 C 95,65 105,-15 65,-65 C 30,-110 -50,-95 -75,-40" stroke="url(#sageKnot)" stroke-width="14" opacity="0.75" />
+
+    <!-- Mid-Layer: Purple Sweeping Loop -->
+    <path class="ribbon-stroke" d="M -65,65 C -105,15 -75,-60 -15,-90 C 45,-115 100,-45 75,25 C 50,85 -25,100 -70,55" stroke="url(#purpleKnot)" stroke-width="15" opacity="0.9" />
+
+    <!-- Fore-Layer: Gold Synthesis Infinity Loop -->
+    <path class="ribbon-stroke" d="M -80,-40 C -55,30 15,95 75,65 C 120,30 85,-50 20,-80 C -45,-100 -95,-15 -40,45 C 10,95 75,65 90,10" stroke="url(#goldKnot)" stroke-width="16" />
+
+    <!-- Emergent Core Aperture Lens (Negative Space Core) -->
+    <path d="M -28,0 C -12,-20 12,-20 28,0 C 12,20 -12,20 -28,0 Z" fill="#F4EFE6" opacity="0.95" />
+    <circle cx="0" cy="0" r="4" fill="#141218" />
+    <circle cx="0" cy="0" r="1.5" fill="#FACC15" />
+  </g>
+
+  <!-- Typography Lockup -->
+  <text x="400" y="375" class="title-18" text-anchor="middle">ALETHEIA EMERGENCE</text>
+  <text x="400" y="410" class="sub-18" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+</svg>

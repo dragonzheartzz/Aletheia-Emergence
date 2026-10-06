@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-16 { fill: #110F15; }
+      .title-16 { font-family: 'Cinzel', 'Baskerville', 'Georgia', serif; font-weight: 400; font-size: 26px; fill: #F4ECE1; letter-spacing: 0.38em; }
+      .sub-16 { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 10px; fill: #D4AF37; letter-spacing: 0.32em; }
+    </style>
+
+    <!-- Translucent Gradients for Depth & Interaction -->
+    <radialGradient id="coreGlow16" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E5C158" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#5A3369" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#110F15" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="purpleRibbon16" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E4BB0" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#4A2361" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#240D33" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="goldRibbon16" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F3CE6D" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#B88E2B" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#59410D" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="sageRibbon16" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5B8A74" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#2D4D3E" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#12241C" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Atmospheric Field -->
+  <rect class="bg-16" width="800" height="560" />
+  <circle cx="400" cy="210" r="190" fill="url(#coreGlow16)" />
+
+  <!-- Coalescing Fluid Mark -->
+  <g transform="translate(400, 210)">
+    <!-- Arc A: Purple Vector Sweep -->
+    <path d="M -110,-30 C -130,-100 -50,-140 25,-125 C 95,-110 130,-45 85,25 C 60,0 15,-35 -35,-25 C -75,-15 -90,0 -110,-30 Z" fill="url(#purpleRibbon16)" />
+
+    <!-- Arc B: Gold Vector Sweep -->
+    <path d="M 25,110 C 95,130 140,50 125,-20 C 110,-90 45,-125 -25,-80 C 0,-55 35,-15 25,35 C 15,75 0,90 25,110 Z" fill="url(#goldRibbon16)" />
+
+    <!-- Arc C: Sage Vector Sweep -->
+    <path d="M -25,-110 C -95,-130 -135,-45 -120,25 C -105,95 -45,125 25,80 C -5,55 -35,15 -25,-35 C -15,-75 5,-90 -25,-110 Z" fill="url(#sageRibbon16)" />
+
+    <!-- Emergent Iris Lens (Negative Space Aperture & Core Focal Light) -->
+    <path d="M -42,0 C -20,-32 20,-32 42,0 C 20,32 -20,32 -42,0 Z" fill="#F4ECE1" opacity="0.92" />
+    <path d="M -18,0 C -8,-14 8,-14 18,0 C 8,14 -8,14 -18,0 Z" fill="#110F15" />
+    <circle cx="0" cy="0" r="3.5" fill="#F3CE6D" />
+  </g>
+
+  <!-- Typography Lockup -->
+  <text x="400" y="380" class="title-16" text-anchor="middle">ALETHEIA EMERGENCE</text>
+  <text x="400" y="415" class="sub-16" text-anchor="middle">WHERE INTELLIGENCE CONVERGES, CREATION COALESCES</text>
+</svg>
