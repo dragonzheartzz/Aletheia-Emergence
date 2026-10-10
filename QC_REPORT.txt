@@ -1,0 +1,14 @@
+Aletheia Emergence — Production Asset QC
+
+1. Locked-logo master source dimensions: 1254 x 1254.
+2. Master transparent export dimensions: 1254 x 1254.
+3. Foreground RGB preservation on fully opaque pixels: PASS.
+4. Alternate logo geometry created: NO.
+5. Logo recolouring applied: NO.
+6. Brand palette restricted to established purple / sage / gold / warm-neutral / charcoal territory: YES.
+7. Invented claims, statistics, dates, contacts, navigation labels or product names in production assets: NO.
+8. Mockup scenes used: NO.
+9. Assets supplied individually rather than as portfolio boards: YES.
+10. Accent elements are separate framing assets and do not replace the logo: YES.
+
+Note: transparent extraction necessarily changes background pixels to alpha; it does not redraw or recolour the supplied mark.
