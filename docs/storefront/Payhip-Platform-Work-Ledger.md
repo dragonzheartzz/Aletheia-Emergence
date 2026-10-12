@@ -93,3 +93,13 @@ Update this section when evidence is available.
 - **Decision or approval needed:** None for read-only diagnosis. If the debugger-attachment error persists, identify the active browser/debugger owner before retrying writes.
 - **Reusable lesson / workflow change:** URL alignment across Opera and Brave/Vibe was successful. Matching URLs do not guarantee matching editor page-selection state. Treat internal tool failures and debugger conflicts as blockers, not reasons to repeat the same action.
 - **Next step:** Freshly inspect editor state, confirm About is selected, then make one body-field change and verify in editor plus preview. Do not publish without explicit approval.
+
+### 2026-10-12 — Resumed after navigation confirmation
+
+- **Starting state:** Opera and Brave/Vibe editor both showed the Payhip builder URL. Opera About preview was aligned to the exact About preview URL.
+- **Verified improvement:** Vibe snapshot now explicitly reports editing the single custom page “About”. About preview still says “Empty Page”.
+- **Action attempted:** Opened Add menu, then attempted its Section item.
+- **Result:** Add menu opened. Clicking accessibility UID A3 selected a different “#T” control; fresh snapshot showed a Desktop/Mobile preview menu, not the section picker. No section was added.
+- **Tool status:** Vibe list_pages and take_snapshot succeeded; click wrapper succeeded mechanically but targeted the wrong element. All wrappers were deactivated after use. No 429, no fill, no save, no publish.
+- **Outcome:** PARTIAL. The prior debugger-attachment error did not recur, but duplicate/unstable accessibility UIDs prevent reliable click targeting. About remains empty.
+- **Next step:** Establish a scoped/unambiguous selector for the Section menu item before trying again; align Opera preview to About for verification. Do not publish without explicit approval.
