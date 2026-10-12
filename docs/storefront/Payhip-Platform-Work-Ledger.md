@@ -16,6 +16,7 @@ This ledger covers the current Payhip platform/storefront setup and the work nee
 - Preserve approved brand assets, logo, palette, fonts, and existing specification. Do not invent product claims, reviews, testimonials, sales figures, or customer numbers.
 - Configure additional browser tools, such as a dropdown selector, only when a real task demonstrates the need.
 - Keep Vibe Browser scenarios inactive between uses unless their activation is explicitly authorised.
+- **Browser routing:** use direct Opera for ordinary reading and independent verification where sufficient; use Vibe Browser through the existing Make wrappers for authorised interactions requiring the Brave/Vibe session. Match the target by URL and page identity, not by cross-browser tab IDs. Use fresh Vibe identifiers for actions, refresh only when freshness matters, and do not refresh the editor while it may contain unsaved state.
 - Record estimated costs as estimates and actual Make usage only when supported by run/credit evidence.
 
 ## Reference documents
