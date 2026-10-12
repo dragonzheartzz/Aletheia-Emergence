@@ -130,6 +130,35 @@ Working safeguards:
 - The public Vibe documentation warns that enabling MCP External Control in multiple browser profiles on one relay may make targeting ambiguous. Do not change profile or relay configuration without establishing which session the current connection controls.
 - Tilly may use a separate Brave browser, but that only improves isolation if the Vibe connection is confirmed to target the intended profile. Do not assume separation merely because another browser window is open.
 
+## 6A. 2026-10-12 — Payhip cross-browser alignment and editor failure record
+
+**Objective:** Resume authorised private-draft storefront work, align the same target URL in Opera and Brave/Vibe, and record tool failures. No publication authorised.
+
+**Observed starting state and cross-browser alignment:**
+- Direct Opera list_tabs succeeded. Editor tab 1396777966 was at https://payhip.com/builder/public; preview tab 1396777967 was initially on the Contact draft-preview URL.
+- Vibe list_pages scenario 7895104 succeeded twice. Editor page 1509476797 was at the same https://payhip.com/builder/public URL; preview page 1509476816 was Contact draft preview.
+- Opera tab 1396777967 was navigated to the exact Contact URL reported by Vibe, then to the exact About preview URL reported by a fresh editor snapshot. Opera confirmed the About preview URL and displayed “Empty Page — Create your beautiful page by adding sections.”
+- Opera editor snapshot showed the builder in Main editing context, with existing homepage sections and Publish/Save controls. No Publish action was taken.
+- Vibe editor snapshot (7895535, Markdown) succeeded and showed a Text Section editor. The heading field’s accessibility text appeared to contain the approved About heading plus body copy, but the body textbox still showed Payhip’s default placeholder. The embedded preview showed “Discuss your brand or product” and the default body placeholder. This is inconsistent with the intended About content and does not prove the body copy was saved.
+- The editor’s page selector was opened successfully with click wrapper 7895620, UID A1. A fresh accessibility snapshot showed search field UID A63, About link UID A66, Contact A65, Main A67. Clicking About UID A66 failed internally, so the selected editor page could not be safely confirmed.
+
+**Tool execution record:**
+- PASS: Opera list_tabs, tab_content for editor/preview, and go_to_page for matching preview URLs.
+- PASS: Vibe list_pages scenario 7895104 (two runs; wrapper deactivated after each).
+- PASS: Vibe take_snapshot scenario 7895535 in Markdown for editor and accessibility-tree format once when selector was open (wrapper deactivated after each successful run).
+- PASS: Vibe click scenario 7895620 clicking editor page-selector UID A1.
+- FAIL / UNVERIFIED: Vibe take_snapshot scenario 7895535 returned “The tool failed internally” for the Contact preview page and later for the editor immediately after an internal click failure. Each wrapper was deactivated after the run.
+- FAIL: Vibe click scenario 7895620 for About selector UID A66 returned “The tool failed internally”. Do not retry unchanged.
+- FAIL: Vibe fill scenario 7895212 targeting body textbox UID A17 returned a runtime error: “Cannot attach debugger to tab 1509476797: another debugger session (DevTools, or a second automation run) is already attached. Close DevTools on this tab or wait for the other session to finish.” The fill did not execute. Wrapper was deactivated.
+- No HTTP 429 was reported in this session. Do not describe these failures as rate limiting.
+- Make usage/credit charges for this session were not reconciled; do not estimate a balance from scenario calls.
+
+**Outcome:** PARTIAL / BLOCKED for editing. Cross-browser URL alignment was achieved and verified, but the editor’s current page context and body-field targeting remain unresolved. No verified About body update or save occurred. No evidence of publication; Publish was not clicked.
+
+**Working hypotheses, not established causes:** The debugger-attachment error is consistent with a second debugger/automation session on the same Vibe tab, but this does not establish which session owns it or whether the concurrent connection test caused it. The mismatch between Main editor context, About preview URL, and placeholder content could reflect unsaved state, page-selection state, or an editor/preview quirk. Do not repair or repeat the edit until the active target is confirmed.
+
+**Next step:** Before any further write, inspect the current editor and page selector with one fresh Vibe snapshot; if debugger attachment still blocks interaction, stop Vibe writes and resolve which connection owns the Brave tab. Keep Opera on the exact same URL as the Brave preview for independent verification. Once About is clearly selected, make one bounded body-field change, verify it in the editor, use the existing preview reload workflow, and verify the exact rendered text in Opera. Never publish without Tilly’s explicit approval.
+
 ## 7. Credit planning and monthly estimates
 
 The first-month planning allowance recorded for this work is **1,000 Make credits**. The purpose is to complete the storefront platform work and learn which reusable workflows are economical enough to reuse across projects. Actual account consumption must be distinguished from this project’s measured runs.
