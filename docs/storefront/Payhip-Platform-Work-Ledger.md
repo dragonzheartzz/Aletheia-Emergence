@@ -103,3 +103,15 @@ Update this section when evidence is available.
 - **Tool status:** Vibe list_pages and take_snapshot succeeded; click wrapper succeeded mechanically but targeted the wrong element. All wrappers were deactivated after use. No 429, no fill, no save, no publish.
 - **Outcome:** PARTIAL. The prior debugger-attachment error did not recur, but duplicate/unstable accessibility UIDs prevent reliable click targeting. About remains empty.
 - **Next step:** Establish a scoped/unambiguous selector for the Section menu item before trying again; align Opera preview to About for verification. Do not publish without explicit approval.
+
+### 2026-10-13 — Final editor-route discovery checkpoint
+
+- **Objective:** Record the final bounded attempt to find a reliable way to enter About-page copy through Vibe Browser and its Make wrappers, including browser tools not yet wrapped as scenarios.
+- **Scope:** Private draft only. No save or publication was attempted in this checkpoint.
+- **Verified starting state:** Direct Opera About preview tab 1396778006 displayed “Empty Page — Create your beautiful page by adding sections”. Editor tab 1396777966 remained at https://payhip.com/builder/public.
+- **Tool evidence:** The Vibe fill wrapper (7895212) previously reported filling “All Products” when the intended target was the rich-text body, so UID-based writing is unsafe without a more reliable targeting method. A nominal click on “Discard changes” did not clear the malformed unsaved editor state on later inspection. The experimental evaluate_script scenario (7913458) was blocked by safety checks before execution. No HTTP 429 occurred.
+- **Discovery:** Scenario-name searches found no existing wrappers named around type, keyboard, input, or selector. Make app discovery surfaced Airtop and Anchor Browser modules with click/type/form/keyboard capabilities, but their connections, permissions, setup requirements, and compatibility with the current Payhip session were not verified. No alternative scenario was created or tested.
+- **Outcome:** BLOCKED for safe editor writes through the currently tested Vibe wrappers. No About-page progress was verified; the rendered About preview remains empty. No Save Changes or Publish action was taken.
+- **Manual intervention:** If a new session cannot quickly establish a genuinely different, supported browser action and verify it on the private draft, stop tool experimentation and collaborate with Tilly on manually entering the approved About copy. The product page remains out of scope until photography, final revision, and consumer testing are complete.
+- **Reusable lesson:** Catalogue discovery is not operational proof. Verify connection, module configuration, browser target, interaction, and rendered outcome separately. Do not repeat unchanged UID-based writes or bypass a safety block.
+- **Next step:** Prepare a comprehensive handoff packet for a new conversation, referencing the updated workflow learning ledger and this entry. Keep the storefront unpublished; Tilly remains the final authority.
