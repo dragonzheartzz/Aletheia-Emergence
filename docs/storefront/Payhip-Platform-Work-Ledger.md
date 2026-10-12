@@ -76,3 +76,20 @@ Update this section when evidence is available.
 | Date | Change | Evidence |
 |---|---|---|
 | 2026-10-11 | Ledger created as a blank historical record; no Payhip site changes performed by this action. | Git commit for this file |
+
+### 2026-10-12 — Cross-browser alignment and editor failure session
+
+- **Objective:** Resume private-draft storefront work and verify matching Payhip targets in Opera and Brave/Vibe.
+- **Scope authorised:** Inspect and edit the private draft; no publication. Product-page content remains deferred.
+- **Starting state / target:** Opera editor tab 1396777966 and Brave/Vibe editor page 1509476797 both showed https://payhip.com/builder/public. Opera preview tab 1396777967 was navigated to match the Brave/Vibe About preview URL.
+- **Tools and scenarios used:** Direct Opera list_tabs, tab_content, go_to_page; Make wrappers list_pages 7895104, take_snapshot 7895535, click 7895620, and fill 7895212.
+- **Actions taken:** Confirmed matching editor URL; matched Opera preview to Contact and then About preview URLs; inspected editor and preview; opened custom-page selector; attempted to select About; attempted a bounded body-field fill.
+- **Manual input required:** None during this session.
+- **Make credits:** Not measured. No account balance inferred.
+- **Outcome:** PARTIAL / BLOCKED.
+- **Verification performed:** Opera confirmed the About draft preview URL but rendered “Empty Page — Create your beautiful page by adding sections.” Vibe editor snapshot showed Main editing context, a Text Section with approved About copy apparently present in the heading field’s accessibility text, and default body placeholder still present. No saved About body change was verified.
+- **Evidence / links:** See the detailed 2026-10-12 entry in the [Vibe Browser + Make Workflow Learning Ledger](https://github.com/dragonzheartzz/Aletheia-Emergence/blob/main/docs/platform/Vibe-Browser-Make-Workflow-Learning-Ledger.md).
+- **Issues, risks, or unexpected behaviour:** Vibe snapshot failed internally for preview and then editor; selecting About via UID A66 failed internally; filling body textbox UID A17 failed with “Cannot attach debugger… another debugger or automation run is already attached.” The fill did not execute. No HTTP 429 occurred. All attempted wrappers were deactivated after their runs. Publish was not clicked.
+- **Decision or approval needed:** None for read-only diagnosis. If the debugger-attachment error persists, identify the active browser/debugger owner before retrying writes.
+- **Reusable lesson / workflow change:** URL alignment across Opera and Brave/Vibe was successful. Matching URLs do not guarantee matching editor page-selection state. Treat internal tool failures and debugger conflicts as blockers, not reasons to repeat the same action.
+- **Next step:** Freshly inspect editor state, confirm About is selected, then make one body-field change and verify in editor plus preview. Do not publish without explicit approval.
