@@ -24,13 +24,13 @@ Update this document as workflows are tested. Do not turn an isolated success in
 3. **Refresh selectively, not reflexively.** Refresh only when freshness matters or evidence suggests the page is stale. Refresh each browser independently; a refresh in Opera does not synchronise Brave, and vice versa. Avoid refreshing an editor with unsaved work. After a Vibe action, verify through Opera where possible, otherwise use a fresh Vibe view when necessary.
 2. **One bounded action at a time.** Inspect the target, perform one action, verify its result, then continue.
 3. **Keep scenarios inactive between individual runs.** The standard Make wrapper workflow has been: activate the one required on-demand scenario, run it once with explicit inputs, deactivate it, and verify the scenario is inactive when safe and permitted.
-4. **Stop on HTTP 429.** Do not make any further Make calls, including deactivation, readback, or cleanup calls, until Tilly provides a fresh trigger. Report the state as uncertain if it cannot safely be checked.
-5. **Do not bypass safety or permission blocks.** A safety block is not the same as HTTP 429, but it is still a boundary. Record the exact point of blockage, do not route around it, and seek Tilly’s direction before further attempts.
-6. **A successful Make response is not proof of the browser outcome.** Verify the actual page, saved state, and expected content.
-7. **Keep browser page IDs, tab IDs, UIDs, and sessions distinct.** Use the identifier expected by the specific Vibe tool. Do not assume an identifier from one tool or browser connection is valid for another.
-8. **Treat dynamic editor UIDs as provisional.** A fresh snapshot helps identify controls, but the recent UID mismatch shows that a reported click result must be checked against the intended outcome.
-9. **Do not disturb unrelated tabs or sessions.** The browser can contain work from other projects. Do not close or navigate their pages as part of a Payhip task.
-10. **No publication by implication.** The Payhip storefront remains unpublished unless Tilly explicitly authorises publication. The separate product-page completion task remains deferred until photography, final revision, and consumer testing are complete.
+6. **Stop on HTTP 429.** Do not make any further Make calls, including deactivation, readback, or cleanup calls, until Tilly provides a fresh trigger. Report the state as uncertain if it cannot safely be checked.
+7. **Do not bypass safety or permission blocks.** A safety block is not the same as HTTP 429, but it is still a boundary. Record the exact point of blockage, do not route around it, and seek Tilly’s direction before further attempts.
+8. **A successful Make response is not proof of the browser outcome.** Verify the actual page, saved state, and expected content.
+9. **Keep browser page IDs, tab IDs, UIDs, and sessions distinct.** Use the identifier expected by the specific Vibe tool. Do not assume an identifier from one tool or browser connection is valid for another.
+10. **Treat dynamic editor UIDs as provisional.** A fresh snapshot helps identify controls, but the recent UID mismatch shows that a reported click result must be checked against the intended outcome.
+11. **Do not disturb unrelated tabs or sessions.** The browser can contain work from other projects. Do not close or navigate their pages as part of a Payhip task.
+12. **No publication by implication.** The Payhip storefront remains unpublished unless Tilly explicitly authorises publication. The separate product-page completion task remains deferred until photography, final revision, and consumer testing are complete.
 
 ## 3. Scenario inventory relevant to the current workflow
 
