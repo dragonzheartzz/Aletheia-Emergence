@@ -159,6 +159,26 @@ Working safeguards:
 
 **Next step:** Before any further write, inspect the current editor and page selector with one fresh Vibe snapshot; if debugger attachment still blocks interaction, stop Vibe writes and resolve which connection owns the Brave tab. Keep Opera on the exact same URL as the Brave preview for independent verification. Once About is clearly selected, make one bounded body-field change, verify it in the editor, use the existing preview reload workflow, and verify the exact rendered text in Opera. Never publish without Tilly’s explicit approval.
 
+
+## 6B. 2026-10-12 — Resumed after Payhip navigation confirmation
+
+Tilly reported manually confirming the browser's “leave this page / unsaved changes” dialog and selecting “do not ask again”. This was a plausible explanation for prior navigation/state confusion, but causation is not established.
+
+**Fresh verification:**
+- Opera tab 1396777966 remained on https://payhip.com/builder/public. Its accessibility tree explicitly showed “You're currently editing a single custom page ‘Main’” in the first Opera read.
+- Opera preview tab 1396777967 remained on the About draft URL and displayed “Empty Page — Create your beautiful page by adding sections”.
+- Vibe list_pages wrapper 7895104 succeeded. Current editor page 1509476797 was https://payhip.com/builder/public; preview page 1509476816 was Contact preview.
+- Vibe snapshot wrapper 7895535 succeeded and explicitly showed the editor context is now **About**, with “You're currently editing a single custom page ‘About’”. The About preview iframe remained Empty Page. This is a material improvement over the previous ambiguous Main selection, but the page still has no visible content sections.
+
+**Actions and outcomes:**
+- Click wrapper 7895620 on UID A2 successfully opened the editor's Add menu. Snapshot showed menu entries Section UID A3 and Custom Page UID A4.
+- Clicking UID A3 did not select “Section”; the wrapper reported “Clicked button ‘#T’ via CDP”. A fresh snapshot showed a responsive preview option menu with “# Desktop” and “$ Mobile”. This demonstrates duplicate/unstable accessibility UIDs: A3 referred to different controls in different DOM regions or the click resolver selected the wrong element. No section was added.
+- All wrapper scenarios used were deactivated after each run. No HTTP 429 occurred. No fill or save was attempted this session. Publish was not clicked.
+
+**Outcome:** PARTIAL. The editor's selected page is now verified as About and the previous debugger attachment error did not recur during read-only snapshots or click wrapper runs. However, the About page remains empty, and the generic click wrapper cannot reliably target the Section menu item due to duplicate UIDs. Do not retry UID A3 unchanged.
+
+**Next step:** Need a reliable, scoped selector/targeting route for the Section menu entry and subsequent section-picker choice, or use an approved UI action that resolves the visible element unambiguously. Keep Opera preview aligned to the exact About preview URL and verify every structural change there. Do not save/publish until the intended section and copy are visibly correct; never publish without explicit approval.
+
 ## 7. Credit planning and monthly estimates
 
 The first-month planning allowance recorded for this work is **1,000 Make credits**. The purpose is to complete the storefront platform work and learn which reusable workflows are economical enough to reuse across projects. Actual account consumption must be distinguished from this project’s measured runs.
