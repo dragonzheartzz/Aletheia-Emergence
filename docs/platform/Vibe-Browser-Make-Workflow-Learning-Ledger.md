@@ -242,3 +242,33 @@ Resolve these only when relevant to an authorised task. Avoid extra diagnostic r
 ---
 
 **Governance note:** This is a record of lessons and cost evidence, not an execution authorisation. Tilly retains final authority. Continue to follow the current project specification and stop on HTTP 429 or any safety/permission block.
+
+## 6C. 2026-10-13 — Final bounded route discovery and current blocker
+
+**Objective:** Make one final focused attempt to identify a supported interaction route for the Payhip About editor, including Vibe Browser tools not yet wrapped as Make scenarios. No content save or publication was authorised by this discovery work.
+
+**Latest independently verified site state:**
+- Direct Opera preview tab 1396778006 at the About draft-preview URL displayed “Empty Page — Create your beautiful page by adding sections”.
+- The page was marked as a private draft preview. This is the current verified rendered state, not proof of the editor’s unsaved internal state.
+- Editor tab 1396777966 remains at https://payhip.com/builder/public.
+- No Save Changes or Publish action was taken. No successful edit has been verified.
+
+**Failure evidence carried forward from the final interaction attempts:**
+- The editor’s Text Section was malformed: the heading input contained the About heading plus the approved body copy, while the rich-text body still displayed Payhip’s default placeholder.
+- A fill call targeting a UID that had been observed on the rich-text field instead reported that it filled the “All Products” link. This is direct evidence that the current UID-to-element mapping cannot be trusted for write actions.
+- A click on the visible “Discard changes” UID returned a nominal click response, but a later snapshot showed the unsaved editor state had not cleared. The response did not establish that discard occurred.
+- An experimental evaluate_script inspection scenario (7913458) was blocked by the platform’s safety checks before it ran. Do not retry or work around that block.
+- A prior click of the Add-menu “Section” UID activated the Desktop/Mobile preview menu instead. Duplicate or unstable UIDs remain a supported observation; the exact cause is not established.
+- No HTTP 429 was reported. Do not classify the safety block, internal tool failures, or wrong-target behaviour as rate limiting.
+
+**Inventory/discovery result:**
+- A focused search of existing Vibe scenarios returned the current wrappers: list_pages (7895104), fill (7895212), take_snapshot (7895535), take_screenshot (7895536), web_fetch (7895537), navigate_page (7895541), new_page (7895542), switch_to_page (7895544), scroll_page (7895545), click (7895620), wait_for_url (7895623), wait_for (7895626), plus experimental/guarded wrappers evaluate_script (7913458), guarded click exact text (7922041), and take_html_snapshot (7922031). Search results showed these scenarios inactive at the time of inspection.
+- Searches for existing scenarios named around type, keyboard, input, and selector returned no matching scenarios. That is a scenario-name search only, not proof no underlying tools exist.
+- Make’s app/module discovery surfaced browser-action alternatives under Airtop (including clickOnPage, fillForm, type, and pageQueryWithSession) and Anchor Browser (including KeyboardShortcut, MouseClick, TypeText, and runTask). These are candidate integrations only: no connection, permissions, session, or Payhip compatibility was established, and no scenario was created or run from this discovery. They must not be described as available/working until connection and module configuration are verified.
+- No direct, unwrapped Vibe tool was confirmed from the available tool catalogue in this pass. The Make module discovery does show that there may be other browser providers, but switching providers is a separate, untested route and may require authentication/setup or incur additional costs.
+
+**Outcome:** BLOCKED for a safe, reliable Payhip editor write through the currently tested Vibe wrappers. Tool discovery has produced concrete candidate browser integrations to investigate in a new session, but no new editing capability has been validated. Actual storefront progress remains zero for the About page: Opera still renders it empty.
+
+**Decision rule for next session:** Treat this as the final bounded tool-discovery checkpoint, not an invitation to repeat UID experiments. If a genuinely different, supported interaction capability is available and authorised, test it only on the private draft with a single low-risk operation and verify the exact outcome. If no such route can be configured and demonstrated quickly, stop tool experimentation and collaborate with Tilly on manual editor input. Do not publish. Stop all Make calls immediately if HTTP 429 occurs; do not attempt cleanup/follow-up calls after 429.
+
+**Reusable lesson:** Distinguish “a tool can be found in an integration catalogue” from “the account is connected”, “the scenario can be configured”, “the browser action executes”, and “the site outcome is verified”. These are separate gates.
