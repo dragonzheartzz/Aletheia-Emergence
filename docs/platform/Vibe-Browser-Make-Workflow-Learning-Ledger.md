@@ -280,3 +280,29 @@ Resolve these only when relevant to an authorised task. Avoid extra diagnostic r
 - **Future workflow:** Design an Opera↔Vibe/Brave synchronisation and verification protocol before resuming Vibe interaction tests. Match pages by URL and page identity, not cross-browser IDs; account for separate sessions and unsaved state; define authorised action and independent verification; do not presume a shared state just because URLs match.
 - **Scenario state:** Do not change the click wrappers on the basis of current evidence. No further test runs are authorised by this record. Keep the relevant Vibe/Make scenarios inactive between tests.
 - **Outcome:** PARTIAL. Diagnosis and configuration review are recorded, but a reliable synchronised cross-browser action workflow remains unbuilt and unverified.
+
+
+## 2026-10-13 — Cross-project session-isolation lesson from DSH Web
+
+This entry records a bounded tool-routing experiment in a separate project. It does **not** reopen Payhip editor testing, override the existing pause on exploratory Payhip snapshots, or grant authority to perform storefront edits.
+
+### Observed facts
+
+- The existing `list_pages` Make wrapper (scenario 7895104) returned the active Brave/Vibe page inventory.
+- Attempting to script an already-open DSH Web page from that inventory was rejected because the page did not belong to the Vibe session that owned the script call.
+- The existing `new_page` wrapper (scenario 7895542) successfully opened a dedicated DSH Web page. A read-only `evaluate_script` call then returned the page's visible UI text.
+- Opening the DSH Web page did not automatically select the intended DSH agent task. The unrelated budget-planner task remained selected in the UI.
+- A configured `take_html_snapshot` helper (scenario 7922031) failed at runtime with `Tool not found: take_html_snapshot`. This shows that saved scenario configuration and the connected MCP server's callable tool inventory must be checked separately.
+- A later `take_snapshot` attempt encountered Make's known `Too Many Requests` response. Further Make calls were stopped rather than retried.
+- No agent task was dispatched and no local diagnostic was performed.
+
+### Reusable workflow rule
+
+1. Use `list_pages` for discovery, but treat returned IDs as belonging to a particular browser/session context.
+2. Before scripting a page, confirm it is owned by the current Vibe session. If not, do not bypass the refusal; open a dedicated page only when the task authorises it.
+3. Verify both **page identity** and **application/task selection**. A successful navigation or DOM read proves neither that the intended task is selected nor that work has been dispatched.
+4. Treat scenario presence, successful wrapper execution, observed page interaction, and verified business outcome as separate capability gates.
+5. On HTTP 429 / `Too Many Requests`, stop Make calls and wait for Tilly's next prompt after the known free-tier cooldown. Do not run follow-up calls to check or clean up scenario state after the rate-limit response; record that state as unverified.
+6. Keep project-specific safeguards in force. This DSH diagnostic probe is not a reason to resume Payhip editor snapshots or writes.
+
+**Outcome:** Useful evidence gained, but the DSH diagnostic remains undispatched. Status is PARTIAL for tool-route discovery and BLOCKED for the intended diagnostic execution.
