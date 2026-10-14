@@ -333,3 +333,41 @@ This is a scope clarification to the 2026-10-13 Payhip pause, not a reversal of 
 **Usage snapshot, inspected read-only on 2026-10-14:** 17 Vibe-labelled Make scenarios showed 461 aggregated scenario credits in Make's reported current period; `take_snapshot` showed 215, `click` 76, `fill` 51 and `list_pages` 39. Ten Neon-labelled scenarios showed 65 combined credits and are now historical only. These are scenario-level usage counters, not a full account balance. All 27 matched scenario entries were inactive at the time of inspection. No Make scenarios were activated, run, edited or deleted during this review.
 
 **Current disposition:** bounded workflow-coordination work is authorised; the Payhip edit itself remains BLOCKED for safe Vibe interaction pending a genuinely reliable method or a separate manual workflow. No additional infrastructure or Make scenario has been created.
+
+
+## 2026-10-14 — Read-only Vibe/Make wrapper configuration reconciliation
+
+This entry records a configuration-only investigation after a fresh CEO trigger. It does not resume Payhip editing or publication. No wrapper was activated or run and no scenario or connection was edited.
+
+### Confirmed inventory
+
+- Make returned 17 Vibe-labelled scenarios: 16 on-demand wrappers/helpers and the separate scheduled `Vibe Browser Tool Access` scenario. All 17 were inactive with zero incomplete executions at inspection.
+- The 16 wrapper/helper modules inspected use the same Make MCP Client connection reference `11812753`, displayed as `Vibebrowser`. Each wrapper supplies page/tab/element/action arguments; no wrapper supplies a separate remote UUID.
+- The separate `Vibe Browser Tool Access` scenario is configured as scheduled indefinitely every 900 seconds (15 minutes), but is inactive and has an empty saved module config in the returned module record. It is not a one-shot wrapper and must remain separately governed.
+- Make's dynamic tool-name resolver for the `Vibebrowser` connection returned relevant tools including `list_pages`, `new_page`, `switch_to_page`, `navigate_page`, `click`, `fill`, `scroll_page`, `wait_for`, `wait_for_url`, `web_fetch`, `evaluate_script`, `press_key`, `take_snapshot` and `take_screenshot`. Targeted searches did not return `take_html_snapshot`.
+- The resolver returns tool names, not each tool's complete input JSON schema. The saved connection's remote-versus-local mode was not exposed by the available safe inspection route, so exact endpoint/browser-selection settings remain UNVERIFIED. No credential was retrieved or recorded.
+
+### Material configuration findings
+
+- `switch_to_page` (7895544) is the notable mapper outlier: its saved `pageId` is a top-level mapper field rather than nested in `arguments`, unlike the other inspected page-action wrappers. The runtime tool name is present, but prior input-contract failures are recorded. Treat the current mapping as suspect pending separately authorised validation; it was not run or changed.
+- `take_html_snapshot` (7922031) remains a configured wrapper even though the current connected tool-name resolver did not return it, and the historical execution record says `Tool not found`. Official documentation currently lists the tool, so published documentation and the live connected inventory differ.
+- `take_screenshot` (7895536) maps `tabId` correctly and the tool name is available, but historical Make runs failed to deliver a usable screenshot through the text-return wrapper. Keep image delivery PARTIAL.
+- `take_snapshot` (7895535) is available and historically functional, but it has the largest recorded scenario usage: 215 credits and about 7.3 MB of data transfer in the reporting period. Use only when a current Vibe-specific target/UID is necessary, not to duplicate Opera reading.
+- `evaluate_script` (7913458) is described as read-only by its scenario name/field label, but the wrapper does not technically restrict the supplied JavaScript to read-only operations.
+- `guarded click exact text` (7922041) uses `evaluate_script` to find one visible exact text match; its saved function interpolates `targetText` directly into a JavaScript string without escaping. Keep it experimental until that input construction is made safe and separately authorised.
+- `press_key` (7923041) maps input `key` to tool argument `keys`; the name is available, but the live parameter schema was not exposed by the resolver.
+- All other core on-demand mappings were read. The detailed interface/mapping table and period usage values are preserved in the companion [Vibe Browser + Make Testing Baseline](https://github.com/dragonzheartzz/Boardroom-Metis-Private/blob/main/_Governance/20261011_VIBE-BROWSER-MAKE_Testing-Baseline_v01.md), Section 16.
+
+### Updated routing principle
+
+Use ChatGPT's built-in web search/retrieval as the primary route for general public internet research, official documentation discovery and public-source comparison. Use direct Opera for browser-specific reading and verification of actual tabs, logged-in/session-specific state or page rendering. Use Vibe/Make only for authorised browser actions and Vibe-specific action context. Reopening/refreshing an Opera page is outcome evidence only when the refreshed view demonstrably shows the relevant persisted state; it does not refresh Brave or prove the Vibe action target.
+
+### Sources and remaining limits
+
+- Vibe Browser MCP integration documentation: https://docs.vibebrowser.app/mcp-integration/
+- Vibe MCP repository: https://github.com/VibeTechnologies/vibe-mcp
+- Make MCP Client documentation: https://apps.make.com/c5ZhYquO55e90hoCJ0rzt
+
+The published Vibe documentation describes remote-session UUIDs as credentials and warns that local relay targeting is undefined when multiple browser profiles have external control enabled. The Make configuration evidence confirms a shared connection reference but does not establish the connection's mode. Do not assume a stale remote UUID is the root cause; the current evidence also points to page ownership, tool-schema drift and stale element identifiers.
+
+**Disposition:** configuration inventory complete for all 16 on-demand wrapper/helper scenarios plus read-only metadata/config inspection of the separate scheduled scenario. End-to-end readiness remains PARTIAL. No live browser action or wrapper execution was performed in this audit.
