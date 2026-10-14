@@ -371,3 +371,12 @@ Use ChatGPT's built-in web search/retrieval as the primary route for general pub
 The published Vibe documentation describes remote-session UUIDs as credentials and warns that local relay targeting is undefined when multiple browser profiles have external control enabled. The Make configuration evidence confirms a shared connection reference but does not establish the connection's mode. Do not assume a stale remote UUID is the root cause; the current evidence also points to page ownership, tool-schema drift and stale element identifiers.
 
 **Disposition:** configuration inventory complete for all 16 on-demand wrapper/helper scenarios plus read-only metadata/config inspection of the separate scheduled scenario. End-to-end readiness remains PARTIAL. No live browser action or wrapper execution was performed in this audit.
+
+
+## 2026-10-14 — Bounded live coordination smoke test
+
+A limited live test of the eyes/hands method was completed on public Vibe documentation, without project-account changes or consequential actions. Vibe `new_page` created its own page; `take_snapshot` returned the expected page title/URL and current UID; `click` on the “Get your remote session id” anchor succeeded; `wait_for_url` confirmed the expected hash in the same Vibe page. Direct Opera independently read the same public document and successfully reopened/reread its existing tab. The two browsers did not synchronise their local URL/hash state; no such assumption was made.
+
+Six Vibe wrapper executions were recorded in scenario usage deltas (new_page +2, take_snapshot +2, click +1, wait_for_url +1 = six credits). After the test all Vibe-labelled scenarios were inactive with zero incomplete executions. Execution IDs and detailed sequence are recorded in Section 18 of the companion testing baseline.
+
+**Status:** PASS for the bounded public-page routing/action smoke test; PARTIAL for full persisted-state verification and long-duration soak testing. This does not validate connection mode, fix the suspect `switch_to_page` mapping or `take_html_snapshot` discrepancy, or prove that a Brave-side persisted change is visible after an Opera refresh. The actual ChatGPT Project instructions field was not editable through the available connector, so post-install instruction testing remains pending manual installation.
