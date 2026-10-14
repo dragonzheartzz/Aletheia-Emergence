@@ -3,7 +3,7 @@
 **Project:** Aletheia Emergence  
 **Purpose:** Preserve practical lessons from using Vibe Browser MCP tools exposed through Make, including reliable browser workflow patterns, scenario behaviour, verification, blockers, and credit planning.  
 **Status:** Living working record. This document records lessons and evidence; it does not independently authorise future browser actions, storefront edits, or publication.  
-**Last updated:** 2026-10-12
+**Last updated:** 2026-10-14
 
 ## 1. Why this ledger exists
 
@@ -306,3 +306,30 @@ This entry records a bounded tool-routing experiment in a separate project. It d
 6. Keep project-specific safeguards in force. This DSH diagnostic probe is not a reason to resume Payhip editor snapshots or writes.
 
 **Outcome:** Useful evidence gained, but the DSH diagnostic remains undispatched. Status is PARTIAL for tool-route discovery and BLOCKED for the intended diagnostic execution.
+
+## 2026-10-14 — CEO scope clarification: eyes/hands coordination work reopened
+
+This is a scope clarification to the 2026-10-13 Payhip pause, not a reversal of the observed Payhip failures.
+
+**CEO-authorised scope:** Metis may resume bounded Vibe/Make interaction and read-cost coordination work specifically to devise and validate a more efficient workflow where direct Opera is the eyes and Vibe Browser in Brave is the hands. The previous blanket phrasing that no further Vibe snapshot work may occur is superseded for this bounded coordination purpose only.
+
+**Still paused:** Payhip About-page editing, unsaved-editor recovery experiments, storefront changes and publication remain outside this authority. No storefront action is authorised by the coordination review.
+
+**Current route:**
+- Use direct Opera for ordinary reads, page inspection, and verification when it can establish the needed fact.
+- Use existing Vibe Browser wrappers only for actions that require the Vibe-owned Brave session.
+- Use direct GitHub for specifications and repository artefacts.
+- Opera Neon through Make is retired and must never be used or touched.
+
+**Coordination protocol:**
+1. Read the authoritative handoff and validate its complete URL/branch before acting.
+2. Inspect with direct Opera first; invoke Vibe only if an authorised browser action is required.
+3. Match Brave pages by URL, title, and application/task identity. IDs from Opera and Vibe are not interchangeable.
+4. Confirm the target is owned by the current Vibe session. Never bypass a session-ownership denial.
+5. Snapshot only when a current Vibe-specific target/UID is needed; do not repeat large snapshots to duplicate a direct Opera read.
+6. Perform one action at a time, then verify persistence through Opera if possible; otherwise use the smallest targeted Vibe readback.
+7. On 429 / Too Many Requests, stop all further Make calls and wait for a fresh CEO trigger. Do not retry or perform cleanup calls after the throttle response.
+
+**Usage snapshot, inspected read-only on 2026-10-14:** 17 Vibe-labelled Make scenarios showed 461 aggregated scenario credits in Make's reported current period; `take_snapshot` showed 215, `click` 76, `fill` 51 and `list_pages` 39. Ten Neon-labelled scenarios showed 65 combined credits and are now historical only. These are scenario-level usage counters, not a full account balance. All 27 matched scenario entries were inactive at the time of inspection. No Make scenarios were activated, run, edited or deleted during this review.
+
+**Current disposition:** bounded workflow-coordination work is authorised; the Payhip edit itself remains BLOCKED for safe Vibe interaction pending a genuinely reliable method or a separate manual workflow. No additional infrastructure or Make scenario has been created.
